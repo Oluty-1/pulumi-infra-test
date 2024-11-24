@@ -1,7 +1,7 @@
 from pulumi import ComponentResource, ResourceOptions
 import pulumi_aws as aws
-from .rds import RDSInstance
-from .backup import BackupConfig
+from .components.rds import RDSInstance
+from .components.backup import BackupConfig
 
 class DataStack(ComponentResource):
     def __init__(self, name: str, vpc_id: str, subnet_ids: list, 

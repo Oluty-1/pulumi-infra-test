@@ -1,9 +1,9 @@
 from pulumi import ComponentResource, ResourceOptions
 import pulumi_aws as aws
-from .ecs_cluster import ECSCluster
-from .task_definition import TaskDefinition
-from .load_balancer import LoadBalancer
-from .ecs_service import ECSService
+from .components.ecs_cluster import ECSCluster
+from .components.task_definition import TaskDefinition
+from .components.load_balancer import LoadBalancer
+from .components.ecs_service import ECSService
 
 class ComputeStack(ComponentResource):
     def __init__(self, name: str, vpc_id: str, private_subnet_ids: list, 
