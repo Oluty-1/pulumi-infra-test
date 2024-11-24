@@ -1,6 +1,6 @@
 from pulumi import ComponentResource, ResourceOptions
-from .vpc import VPCStack
-from .endpoints import VPCEndpoints
+from .components.vpc import VPCStack
+from .components.endpoints import VPCEndpoints
 
 class NetworkStack(ComponentResource):
     def __init__(self, name, security_groups=None, tags=None, opts=None):
