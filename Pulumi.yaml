@@ -1,0 +1,11 @@
+name: numeris-test
+description: '# pulumi-infra-test'
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
