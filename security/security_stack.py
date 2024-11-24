@@ -1,7 +1,7 @@
 from pulumi import ComponentResource, ResourceOptions
-from .iam import IAMRoles
-from .secrets import SecretsManager
-from .security_groups import SecurityGroups
+from .components.iam import IAMRoles
+from .components.secrets import SecretsManager
+from .components.security_groups import SecurityGroups
 
 class SecurityStack(ComponentResource):
     def __init__(self, name, vpc_id, tags=None, opts=None):
