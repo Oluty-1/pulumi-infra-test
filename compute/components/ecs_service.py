@@ -1,4 +1,4 @@
-from pulumi import ComponentResource
+from pulumi import ComponentResource, ResourceOptions
 import pulumi_aws as aws
 
 class ECSService(ComponentResource):
@@ -47,7 +47,8 @@ class ECSService(ComponentResource):
             deployment_minimum_healthy_percent=100,
             
             # Enable ECS Exec for debugging
-            enable_execute_command=True
+            enable_execute_command=True,
+
+            opts=ResourceOptions(parent=self)
         )
 
-        self.register_outputs({})

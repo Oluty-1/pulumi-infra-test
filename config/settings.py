@@ -5,6 +5,7 @@ def get_config():
     config = Config()
     
     return {
+        "name": config.get("numeris"),
         "environment": config.get("environment") or "dev2",
         "vpc_cidr": config.get("vpc_cidr") or "10.0.0.0/16",
         "region": config.get("region") or "us-west-2",

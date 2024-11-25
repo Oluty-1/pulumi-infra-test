@@ -62,9 +62,11 @@ class ComputeStack(ComponentResource):
         self.cluster_name = self.cluster.cluster_name
         self.cluster_arn = self.cluster.cluster_arn
         self.alb_dns_name = self.load_balancer.alb_dns_name
+        self.service_name = self.service._name
 
         self.register_outputs({
             "cluster_name": self.cluster_name,
             "cluster_arn": self.cluster_arn,
-            "alb_dns_name": self.alb_dns_name
+            "alb_dns_name": self.alb_dns_name,
+            "service_name": self.service_name  # Add service name to outputs
         })
