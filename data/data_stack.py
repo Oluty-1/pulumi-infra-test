@@ -9,17 +9,6 @@ class DataStack(ComponentResource):
                  opts: ResourceOptions = None):
         super().__init__("custom:data:DataStack", name, None, opts)
 
-        # Create DB Parameter Group with proper parenting
-        self.parameter_group = aws.rds.ParameterGroup(f"{name}-pg",
-            family="postgres14",
-            description="Custom parameter group for PostgreSQL 14",
-            parameters=[
-                {"name": "max_connections", "value": "100"},
-                {"name": "shared_buffers", "value": "4096MB"}
-            ],
-            tags=tags,
-            opts=ResourceOptions(parent=self)
-        )
 
         # Create DB Subnet Group with proper parenting
         self.subnet_group = aws.rds.SubnetGroup(f"{name}-subnet-group",
@@ -46,12 +35,12 @@ class DataStack(ComponentResource):
         self.rds = RDSInstance(f"{name}",
             vpc_id=vpc_id,
             subnet_group_name=self.subnet_group.name,
-            parameter_group_name=self.parameter_group.name,
+            # parameter_group_name=self.parameter_group.name,
             security_group_id=security_group_id,
             tags=tags,
             opts=ResourceOptions(
                 parent=self,
-                depends_on=[self.parameter_group, self.subnet_group]
+                depends_on=[self.subnet_group]
             )
         )
 
@@ -74,7 +63,7 @@ class DataStack(ComponentResource):
         self.register_outputs({
             "instance_id": self.instance_id,
             "endpoint": self.endpoint,
-            "parameter_group_name": self.parameter_group.name,
+            # "parameter_group_name": self.parameter_group.name,
             "subnet_group_name": self.subnet_group.name,
             # "db_secret_arn": self.rds.secret_arn
         })

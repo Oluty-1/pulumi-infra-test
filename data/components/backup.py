@@ -22,8 +22,8 @@ class BackupConfig(ComponentResource):
                 "start_window": 60,
                 "completion_window": 120,
                 "lifecycle": {
-                    "cold_storage_after": 30,
-                    "delete_after": 90
+                    "cold_storage_after": 90,
+                    "delete_after": 180
                 }
             }],
             tags=dict(tags or {}, Name=f"{name}-backup-plan")

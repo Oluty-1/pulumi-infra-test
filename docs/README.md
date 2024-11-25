@@ -40,7 +40,7 @@ numeris/
 ## Quick Start
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
-3. Configure Pulumi: `pulumi config set aws:region us-west-2`
+3. Configure Pulumi: `pulumi config set aws:region us-west-1`
 4. Deploy: `pulumi up`
 
 ## Documentation

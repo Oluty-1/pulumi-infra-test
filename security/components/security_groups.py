@@ -95,4 +95,10 @@ class SecurityGroups(ComponentResource):
         self.alb_sg_id = self.alb_sg.id
         self.rds_sg_id = self.rds_sg.id
 
-        self.register_outputs({})
+        # Properly register outputs
+        self.register_outputs({
+            "vpc_endpoints_sg_id": self.vpc_endpoints_sg_id,
+            "ecs_tasks_sg_id": self.ecs_tasks_sg_id,
+            "alb_sg_id": self.alb_sg_id,
+            "rds_sg_id": self.rds_sg_id
+        })

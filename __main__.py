@@ -1,3 +1,4 @@
+
 import pulumi
 from networking.network_stack import NetworkStack
 from security.security_stack import SecurityStack
@@ -41,7 +42,7 @@ compute = ComputeStack("numeris-prod",
     vpc_id=network.vpc_id,
     private_subnet_ids=network.private_subnet_ids,
     public_subnet_ids=network.public_subnet_ids,
-    security_groups=security.security_groups,
+    security_groups=security.security_groups,  
     iam_roles=security.iam_roles,
     certificate_arn=config["certificate_arn"],
     tags=tags,
@@ -52,11 +53,11 @@ compute = ComputeStack("numeris-prod",
 monitoring = MonitoringStack("main",
     vpc_id=network.vpc_id,
     subnet_ids=network.private_subnet_ids,
-    security_group_id=security.ecs_tasks_sg_id,
+    security_group_id=security.ecs_tasks_sg_id,  
     cluster_name=compute.cluster_name,
     service_name=compute.service_name,
     rds_instance_id=data.instance_id,
-    environment=config["environment"],  # Add the environment from config
+    environment=config["environment"],
     tags=tags,
     opts=pulumi.ResourceOptions(depends_on=[compute, data])
 )

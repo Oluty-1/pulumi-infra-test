@@ -24,7 +24,7 @@ class TaskDefinition(ComponentResource):
                     "logDriver": "awslogs",
                     "options": {
                         "awslogs-group": log_group,
-                        "awslogs-region": "us-west-2",
+                        "awslogs-region": "us-west-1",
                         "awslogs-stream-prefix": "ecs"
                     }
                 }

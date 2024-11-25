@@ -23,7 +23,7 @@ class VPCStack(ComponentResource):
 
         # Create public subnets with VPC as parent
         self.public_subnets = []
-        for i, az in enumerate(["us-west-2a", "us-west-2b"]):
+        for i, az in enumerate(["us-west-1b", "us-west-1c"]):
             subnet = aws.ec2.Subnet(f"{name}-public-{i+1}",
                 vpc_id=self.vpc.id,
                 cidr_block=f"10.0.{i*32}.0/20",
@@ -53,7 +53,7 @@ class VPCStack(ComponentResource):
 
         # Create private subnets with VPC as parent
         self.private_subnets = []
-        for i, az in enumerate(["us-west-2a", "us-west-2b"]):
+        for i, az in enumerate(["us-west-1b", "us-west-1c"]):
             subnet = aws.ec2.Subnet(f"{name}-private-{i+1}",
                 vpc_id=self.vpc.id,
                 cidr_block=f"10.0.{(i+2)*32}.0/20",

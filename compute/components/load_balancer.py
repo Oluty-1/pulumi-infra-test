@@ -11,7 +11,7 @@ class LoadBalancer(ComponentResource):
             load_balancer_type="application",
             security_groups=[security_group_id],  # Use the single security group ID
             subnets=public_subnet_ids,
-            enable_deletion_protection=True,
+            enable_deletion_protection=False,
             tags=tags,
             opts=ResourceOptions(parent=self)
         )
