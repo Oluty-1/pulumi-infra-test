@@ -1,5 +1,3 @@
-
-"""Main Pulumi program with improved organization"""
 import pulumi
 from networking.network_stack import NetworkStack
 from security.security_stack import SecurityStack
@@ -14,13 +12,13 @@ config = get_config()
 tags = get_resource_tags("main", config["environment"], "infrastructure")
 
 # Create network stack
-network = NetworkStack("main",
+network = NetworkStack("numeris",
     tags=tags,
     opts=pulumi.ResourceOptions()
 )
 
 # Create security stack
-security = SecurityStack("main",
+security = SecurityStack("numeris",
     vpc_id=network.vpc_id,
     tags=tags,
     opts=pulumi.ResourceOptions(depends_on=[network])
@@ -30,7 +28,7 @@ security = SecurityStack("main",
 network.create_endpoints(security.security_groups)
 
 # Create data stack
-data = DataStack("main",
+data = DataStack("numeris",
     vpc_id=network.vpc_id,
     subnet_ids=network.private_subnet_ids,
     security_group_id=security.rds_sg_id,
@@ -39,7 +37,7 @@ data = DataStack("main",
 )
 
 # Create compute stack
-compute = ComputeStack("main",
+compute = ComputeStack("numeris-prod",
     vpc_id=network.vpc_id,
     private_subnet_ids=network.private_subnet_ids,
     public_subnet_ids=network.public_subnet_ids,
@@ -56,7 +54,9 @@ monitoring = MonitoringStack("main",
     subnet_ids=network.private_subnet_ids,
     security_group_id=security.ecs_tasks_sg_id,
     cluster_name=compute.cluster_name,
+    service_name=compute.service_name,
     rds_instance_id=data.instance_id,
+    environment=config["environment"],  # Add the environment from config
     tags=tags,
     opts=pulumi.ResourceOptions(depends_on=[compute, data])
 )
