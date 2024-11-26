@@ -38,6 +38,10 @@ This shows the heirachy and dependencies or resources in this particular infrast
 
 
 
+Check the docs folder in the repository for more indepth details
+
+
+
 ## Destroy the Infrastructure
    To destroy the infrastrcture, run the command "pulumi destroy".
    This will delete the resources and tear down the entire infrastruture.
