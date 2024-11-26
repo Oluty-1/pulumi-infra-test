@@ -33,17 +33,9 @@ This shows the heirachy and dependencies or resources in this particular infrast
 
 ## Cost Analysis
    Here's an aproximate breakdown of what the coloud expense will be in a month.
-   Total costs                         $145.5
    
-   Relational Database Service         $30
-   VPC                                 $32
-   EC2-Other                           $35
-   Elastic Load Balancing              $16
-   Elastic Container Service           $6
-   CloudWatch                          $20
-   Cost Explorer                       $2.5
-   EC2 Container Registry (ECR)        $3
-   Secrets Manager                     $1
+![Screenshot from 2024-11-26 02-42-04](https://github.com/user-attachments/assets/75162697-001d-43b0-adac-b9ca51813308)
+
 
 
 ## Destroy the Infrastructure
