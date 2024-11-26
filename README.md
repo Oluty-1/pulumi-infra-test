@@ -1,28 +1,14 @@
 # pulumi-infra-test
 setting up a production ready infrastructure with application deployment on ecs using pulumi
 
-PULUMI Installation:
-follow Pulumi's documentation for details on how to install pulumi depending on which OS you run here >> https://www.pulumi.com/docs/iac/download-install/
+#### PULUMI Installation:
+Follow Pulumi's documentation for details on how to install pulumi depending on which OS you run here >> https://www.pulumi.com/docs/iac/download-install/
 
-Here's the file structure for this project and what to expect
+This project builds the entire infrastructure along with the dependencies needes for an application to be deployed and ran on Amazon ECS.
 
-numeris/
-├── docs/
-│   ├── architecture/
-│   │   ├── diagrams/
-│   │   │   ├── infrastructure-overview.png
-│   │   │   ├── network-layout.png
-│   │   │   └── security-groups.png
-│   │   └── README.md       # Architecture overview
-│   ├── security/
-│   │   ├── iam-policies/Secretsmanagement/ security group
-│   │   │   
-│   │   └── SECURITY.md     # Security overview & best practices
-│   ├── deployment/
-│   │   ├── prerequisites.md
-│   │   ├── configuration.md
-│   │   └── deployment.md   # Step-by-step deployment guide
-│   └── costs/
-│       ├── cost-breakdown.md
-│       └── optimization.md  # Cost optimization strategies
-└── README.md               # Project overview
+Which includes the Network infrastructure, the security setup and management, the database setup, and the compute infrastructure, while keepingcts minimal and right sizing resources while allowing for scalling up in moments of high traffic.
+
+#### Here's a snippet of the infrastructure from pulumi graph view
+
+![Screenshot from 2024-11-25 23-22-53](https://github.com/user-attachments/assets/04f102e4-03fd-43c7-aaef-65b61b2bf2fb)
+This shows the heiravchy and dependencies or resources in this particular infrastructure
