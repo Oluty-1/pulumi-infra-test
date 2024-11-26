@@ -11,4 +11,12 @@ Which includes the Network infrastructure, the security setup and management, th
 #### Here's a snippet of the infrastructure from pulumi graph view
 
 ![Screenshot from 2024-11-25 23-22-53](https://github.com/user-attachments/assets/04f102e4-03fd-43c7-aaef-65b61b2bf2fb)
-This shows the heiravchy and dependencies or resources in this particular infrastructure
+This shows the heirachy and dependencies or resources in this particular infrastructure
+
+## Steps to Build this Infrastruture
+1. Have pulumi installed on you machine
+2. Configure aws credentials using the command "aws config" in your terminal, (Make sure it's an account that with administrator access)
+3. Clone this repository into your machine
+4. Edit the "Pulumi.dev.yaml" file to select the aws region of your choice
+5. Manually create a free certificate from your aws console and replace the arn in the "Pulumi.dev.yaml" file
+6. Run the command "pulumi up"
