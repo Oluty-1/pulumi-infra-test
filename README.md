@@ -32,7 +32,7 @@ This shows the heirachy and dependencies or resources in this particular infrast
    it will take a while, but you can check the aws console to see the resources being created, and check ulumi side for the graph view of the infrastructure.
 
 ## Cost Analysis
-   Here's an aproximate breakdown of what the coloud expense will be in a month
+   Here's an aproximate breakdown of what the coloud expense will be in a month.
    Total costs                         $145.5
    
    Relational Database Service         $30
