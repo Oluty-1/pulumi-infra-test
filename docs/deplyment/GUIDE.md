@@ -16,7 +16,7 @@
 ### Environment Setup
 1. Clone the repository
 
-git clone [repository-url]
+git clone [[repository-url]](https://github.com/Oluty-1/pulumi-infra-test.git)
 cd numeris
 
 
@@ -24,8 +24,6 @@ cd numeris
 3. Set required configuration values
 
 pulumi config set certificate_arn arn:aws:acm:region:account:certificate/xxx
-pulumi config set domain_name example.com
-pulumi config set environment dev
 
 pulumi up
 
@@ -84,4 +82,3 @@ pulumi up
 For additional support:
 - Review CloudWatch logs
 - Check Pulumi documentation
-- Contact AWS support
