@@ -4,7 +4,8 @@
 ## Infrastructure Design
 The infrastructure is designed with a focus on scalability, security, and maintainability. It follows AWS best practices and implements a multi-tier architecture.
 
-![Infrastructure Overview](diagrams/infrastructure-overview.png)
+![Screenshot from 2024-11-25 23-22-53](https://github.com/user-attachments/assets/62e71718-b036-481a-bb9b-5e0a33ca4c57)
+
 
 ## Components Breakdown
 
@@ -21,8 +22,8 @@ The infrastructure is designed with a focus on scalability, security, and mainta
 - **Auto Scaling**: 
   - CPU utilization target: 70%
   - Memory utilization target: 80%
-  - Min instances: 2
-  - Max instances: 10
+  - Min instances: 1
+  - Max instances: 3
 - **Load Balancer**: Application Load Balancer with SSL termination
 
 ### Data Layer
