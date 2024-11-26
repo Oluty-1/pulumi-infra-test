@@ -37,8 +37,9 @@ This shows the heirachy and dependencies or resources in this particular infrast
 ![Screenshot from 2024-11-26 02-42-04](https://github.com/user-attachments/assets/75162697-001d-43b0-adac-b9ca51813308)
 
 
-
+# GUIDE & DOCUMENTATION
 Check the docs folder in the repository for more indepth details
+
 
 
 
