@@ -39,7 +39,7 @@ This shows the heirachy and dependencies or resources in this particular infrast
 
 # GUIDE & DOCUMENTATION
 Check the docs folder in the repository for more indepth details
-
+- [DOCUMENTATION](docs/README.md)
 
 
 
