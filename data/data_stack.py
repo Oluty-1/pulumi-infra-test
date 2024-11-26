@@ -37,6 +37,7 @@ class DataStack(ComponentResource):
             subnet_group_name=self.subnet_group.name,
             # parameter_group_name=self.parameter_group.name,
             security_group_id=security_group_id,
+            username="numeris-admin",
             tags=tags,
             opts=ResourceOptions(
                 parent=self,

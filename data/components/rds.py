@@ -3,7 +3,7 @@ import pulumi_aws as aws
 
 class RDSInstance(ComponentResource):
     def __init__(self, name: str, vpc_id: str, subnet_group_name: str, security_group_id: str,
-                 tags: dict = None, opts: ResourceOptions = None):
+                 username: str, tags: dict = None, username: str, opts: ResourceOptions = None):
         super().__init__("custom:data:RDSInstance", name, None, opts)
 
         # Create RDS instance with IAM authentication enabled
@@ -12,6 +12,7 @@ class RDSInstance(ComponentResource):
             engine_version="15.8-R2",
             instance_class="db.t3.micro",
             allocated_storage=20,
+            username=username,
             db_subnet_group_name=subnet_group_name,
             vpc_security_group_ids=[security_group_id],
             # parameter_group_name=parameter_group_name,
