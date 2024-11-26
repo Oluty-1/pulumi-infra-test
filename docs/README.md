@@ -49,9 +49,5 @@ numeris/
 - [Deployment Guide](docs/deployment/deployment.md)
 - [Cost Analysis](docs/costs/cost-breakdown.md)
 
-## Contributing
-Please read our contributing guidelines before submitting pull requests.
 
-## License
-[Specify your license]
 
